@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AD77FAD2375D13400A79561 /* ScorecardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FAC2375D13400A79561 /* ScorecardController.swift */; };
+		2AD77FB12375D6D900A79561 /* ScorecardEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FB02375D6D900A79561 /* ScorecardEntryViewController.swift */; };
+		2AD77FB32375F07500A79561 /* ScorecardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FB22375F07500A79561 /* ScorecardListViewController.swift */; };
 		2AFC54A72374C34D00408E21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC54A62374C34D00408E21 /* AppDelegate.swift */; };
 		2AFC54A92374C34D00408E21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC54A82374C34D00408E21 /* SceneDelegate.swift */; };
 		2AFC54AE2374C34D00408E21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFC54AC2374C34D00408E21 /* Main.storyboard */; };
 		2AFC54B02374C34E00408E21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AFC54AF2374C34E00408E21 /* Assets.xcassets */; };
 		2AFC54B32374C34E00408E21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFC54B12374C34E00408E21 /* LaunchScreen.storyboard */; };
+		2AFC54C22374E2B000408E21 /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC54C12374E2B000408E21 /* Scorecard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AD77FAC2375D13400A79561 /* ScorecardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardController.swift; sourceTree = "<group>"; };
+		2AD77FB02375D6D900A79561 /* ScorecardEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardEntryViewController.swift; sourceTree = "<group>"; };
+		2AD77FB22375F07500A79561 /* ScorecardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardListViewController.swift; sourceTree = "<group>"; };
 		2AFC54A32374C34D00408E21 /* DGScorekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DGScorekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFC54A62374C34D00408E21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AFC54A82374C34D00408E21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +29,7 @@
 		2AFC54AF2374C34E00408E21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AFC54B22374C34E00408E21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AFC54B42374C34E00408E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AFC54C12374E2B000408E21 /* Scorecard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +62,9 @@
 		2AFC54A52374C34D00408E21 /* DGScorekeeper */ = {
 			isa = PBXGroup;
 			children = (
+				2AFC54BD2374E1EC00408E21 /* Models */,
 				2AFC54BB2374C37C00408E21 /* Views */,
+				2AFC54BE2374E1FB00408E21 /* Controllers */,
 				2AFC54BA2374C37400408E21 /* Resources */,
 			);
 			path = DGScorekeeper;
@@ -78,6 +88,40 @@
 				2AFC54AC2374C34D00408E21 /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2AFC54BD2374E1EC00408E21 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AFC54C12374E2B000408E21 /* Scorecard.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2AFC54BE2374E1FB00408E21 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2AFC54BF2374E20D00408E21 /* ModelControllers */,
+				2AFC54C02374E21600408E21 /* ViewControllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2AFC54BF2374E20D00408E21 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2AD77FAC2375D13400A79561 /* ScorecardController.swift */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		2AFC54C02374E21600408E21 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2AD77FB02375D6D900A79561 /* ScorecardEntryViewController.swift */,
+				2AD77FB22375F07500A79561 /* ScorecardListViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AFC54C22374E2B000408E21 /* Scorecard.swift in Sources */,
+				2AD77FB12375D6D900A79561 /* ScorecardEntryViewController.swift in Sources */,
 				2AFC54A72374C34D00408E21 /* AppDelegate.swift in Sources */,
+				2AD77FAD2375D13400A79561 /* ScorecardController.swift in Sources */,
 				2AFC54A92374C34D00408E21 /* SceneDelegate.swift in Sources */,
+				2AD77FB32375F07500A79561 /* ScorecardListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
