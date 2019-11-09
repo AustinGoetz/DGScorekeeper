@@ -10,6 +10,8 @@
 		2AD77FAD2375D13400A79561 /* ScorecardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FAC2375D13400A79561 /* ScorecardController.swift */; };
 		2AD77FB12375D6D900A79561 /* ScorecardEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FB02375D6D900A79561 /* ScorecardEntryViewController.swift */; };
 		2AD77FB32375F07500A79561 /* ScorecardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FB22375F07500A79561 /* ScorecardListViewController.swift */; };
+		2AD77FB52376134500A79561 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FB42376134500A79561 /* Course.swift */; };
+		2AD77FB7237619B500A79561 /* CourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FB6237619B500A79561 /* CourseController.swift */; };
 		2AFC54A72374C34D00408E21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC54A62374C34D00408E21 /* AppDelegate.swift */; };
 		2AFC54A92374C34D00408E21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC54A82374C34D00408E21 /* SceneDelegate.swift */; };
 		2AFC54AE2374C34D00408E21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFC54AC2374C34D00408E21 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 		2AD77FAC2375D13400A79561 /* ScorecardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardController.swift; sourceTree = "<group>"; };
 		2AD77FB02375D6D900A79561 /* ScorecardEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardEntryViewController.swift; sourceTree = "<group>"; };
 		2AD77FB22375F07500A79561 /* ScorecardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardListViewController.swift; sourceTree = "<group>"; };
+		2AD77FB42376134500A79561 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		2AD77FB6237619B500A79561 /* CourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseController.swift; sourceTree = "<group>"; };
 		2AFC54A32374C34D00408E21 /* DGScorekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DGScorekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFC54A62374C34D00408E21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AFC54A82374C34D00408E21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				2AFC54C12374E2B000408E21 /* Scorecard.swift */,
+				2AD77FB42376134500A79561 /* Course.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				2AD77FAC2375D13400A79561 /* ScorecardController.swift */,
+				2AD77FB6237619B500A79561 /* CourseController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -196,10 +202,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AFC54C22374E2B000408E21 /* Scorecard.swift in Sources */,
+				2AD77FB52376134500A79561 /* Course.swift in Sources */,
 				2AD77FB12375D6D900A79561 /* ScorecardEntryViewController.swift in Sources */,
 				2AFC54A72374C34D00408E21 /* AppDelegate.swift in Sources */,
 				2AD77FAD2375D13400A79561 /* ScorecardController.swift in Sources */,
 				2AFC54A92374C34D00408E21 /* SceneDelegate.swift in Sources */,
+				2AD77FB7237619B500A79561 /* CourseController.swift in Sources */,
 				2AD77FB32375F07500A79561 /* ScorecardListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
