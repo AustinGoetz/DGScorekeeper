@@ -2,7 +2,7 @@
 //  ScorecardEntryViewController.swift
 //  DGScorekeeper
 //
-//  Created by Austin Goetz on 11/8/19.
+//  Created by Austin Goetz on 11/11/19.
 //  Copyright © 2019 Austin Goetz. All rights reserved.
 //
 
@@ -10,8 +10,10 @@ import UIKit
 
 class ScorecardEntryViewController: UIViewController {
     
-    var scorecard: Scorecard?
-    
+    // Properties
+    var scorecardLandingPad: Scorecard?
+
+    // MARK: - Outlets
     @IBOutlet weak var courseNameTextField: UITextField!
     @IBOutlet weak var totalScoreTextField: UITextField!
     
@@ -19,22 +21,22 @@ class ScorecardEntryViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
     }
-    
-    @IBAction func saveRoundButtonTapped(_ sender: Any) {
+
+    // MARK: - Actions
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let courseName = courseNameTextField.text,
+            let scoreTotal = totalScoreTextField.text else { return }
         
-        guard let score = totalScoreTextField.text,
-            let course = courseNameTextField.text else { return }
-        
-        if let scorecard = scorecard {
-            ScorecardController.shared.updateScorecard(scorecard: scorecard, totalScore: score, courseName: course)
+        if let scorecardToBeupdated = scorecardLandingPad {
+            ScorecardController.shared.updateScorecard(scorecard: scorecardToBeupdated, score: scoreTotal, course: courseName)
         } else {
-            ScorecardController.shared.addScorecard(totalScore: score, courseName: course)
+            ScorecardController.shared.addScorecard(score: scoreTotal, course: courseName)
         }
-        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     func updateViews() {
-        guard let scorecard = scorecard else { return }
+        guard let scorecard = scorecardLandingPad else { return }
         courseNameTextField.text = scorecard.courseName
         totalScoreTextField.text = scorecard.totalScore
     }
