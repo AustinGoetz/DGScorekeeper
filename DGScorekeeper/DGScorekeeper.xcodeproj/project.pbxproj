@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2A257897237A0B6700BE36C0 /* ScorecardListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A257896237A0B6700BE36C0 /* ScorecardListTableViewController.swift */; };
 		2A257899237A0C8500BE36C0 /* ScorecardEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A257898237A0C8500BE36C0 /* ScorecardEntryViewController.swift */; };
+		2A704363237B645800A1CD95 /* ScoreEntryCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704362237B645800A1CD95 /* ScoreEntryCollectionController.swift */; };
+		2A704365237B64BF00A1CD95 /* HoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704364237B64BF00A1CD95 /* HoleCell.swift */; };
+		2A9CD2AD237C8CE0001E91F3 /* CourseSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CD2AC237C8CE0001E91F3 /* CourseSearchViewController.swift */; };
 		2AD77FAD2375D13400A79561 /* ScorecardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FAC2375D13400A79561 /* ScorecardController.swift */; };
 		2AD77FB52376134500A79561 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FB42376134500A79561 /* Course.swift */; };
 		2AD77FB7237619B500A79561 /* CourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD77FB6237619B500A79561 /* CourseController.swift */; };
@@ -23,6 +26,9 @@
 /* Begin PBXFileReference section */
 		2A257896237A0B6700BE36C0 /* ScorecardListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardListTableViewController.swift; sourceTree = "<group>"; };
 		2A257898237A0C8500BE36C0 /* ScorecardEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardEntryViewController.swift; sourceTree = "<group>"; };
+		2A704362237B645800A1CD95 /* ScoreEntryCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEntryCollectionController.swift; sourceTree = "<group>"; };
+		2A704364237B64BF00A1CD95 /* HoleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleCell.swift; sourceTree = "<group>"; };
+		2A9CD2AC237C8CE0001E91F3 /* CourseSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSearchViewController.swift; sourceTree = "<group>"; };
 		2AD77FAC2375D13400A79561 /* ScorecardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorecardController.swift; sourceTree = "<group>"; };
 		2AD77FB42376134500A79561 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		2AD77FB6237619B500A79561 /* CourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseController.swift; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 			children = (
 				2A257896237A0B6700BE36C0 /* ScorecardListTableViewController.swift */,
 				2A257898237A0C8500BE36C0 /* ScorecardEntryViewController.swift */,
+				2A704362237B645800A1CD95 /* ScoreEntryCollectionController.swift */,
+				2A704364237B64BF00A1CD95 /* HoleCell.swift */,
+				2A9CD2AC237C8CE0001E91F3 /* CourseSearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,13 +210,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A704363237B645800A1CD95 /* ScoreEntryCollectionController.swift in Sources */,
 				2AFC54C22374E2B000408E21 /* Scorecard.swift in Sources */,
 				2AD77FB52376134500A79561 /* Course.swift in Sources */,
 				2A257897237A0B6700BE36C0 /* ScorecardListTableViewController.swift in Sources */,
 				2AFC54A72374C34D00408E21 /* AppDelegate.swift in Sources */,
+				2A704365237B64BF00A1CD95 /* HoleCell.swift in Sources */,
 				2A257899237A0C8500BE36C0 /* ScorecardEntryViewController.swift in Sources */,
 				2AD77FAD2375D13400A79561 /* ScorecardController.swift in Sources */,
 				2AFC54A92374C34D00408E21 /* SceneDelegate.swift in Sources */,
+				2A9CD2AD237C8CE0001E91F3 /* CourseSearchViewController.swift in Sources */,
 				2AD77FB7237619B500A79561 /* CourseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

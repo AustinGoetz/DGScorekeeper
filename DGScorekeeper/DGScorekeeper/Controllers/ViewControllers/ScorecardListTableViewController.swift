@@ -48,7 +48,7 @@ class ScorecardListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // IIDOO
         // Identifier
-        if segue.identifier == "addButtonSegue" {
+        if segue.identifier == "scorecardCellToEntryVC" {
             // Index
             if let index = tableView.indexPathForSelectedRow {
                 // Destination

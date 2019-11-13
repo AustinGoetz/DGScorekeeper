@@ -9,26 +9,24 @@
 import Foundation
 import MapKit
 
-class TopLevelDict {
+struct TopLevelDict: Codable {
     
     let businesses: [Courses]
-    
-    init(businesses: [Courses]) {
-        self.businesses = businesses
-    }
 }
 
-class Courses {
+struct Courses: Codable {
     
     let name: String
-    let coordinates: CLLocationCoordinate2D
+//    let longitude: Double
+//    let latitude: Double
+    let coordinates: [Coordinates]
     let distance: Double
+}
+
+struct Coordinates: Codable {
     
-    init(name: String, coordinates: CLLocationCoordinate2D, distance: Double) {
-        self.name = name
-        self.coordinates = coordinates
-        self.distance = distance
-    }
+    let longitude: Double
+    let latitude: Double
 }
 
 

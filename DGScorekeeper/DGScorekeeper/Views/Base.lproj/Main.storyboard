@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -58,6 +59,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mdw-Gi-FNE" kind="show" identifier="scorecardCellToEntryVC" id="sLW-I1-6mc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -68,7 +72,7 @@
                     <navigationItem key="navigationItem" id="zFr-bt-6KB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rdg-7B-KYl">
                             <connections>
-                                <segue destination="mdw-Gi-FNE" kind="show" identifier="addButtonSegue" id="RCr-xX-cNo"/>
+                                <segue destination="mdw-Gi-FNE" kind="show" identifier="" id="RCr-xX-cNo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -140,6 +144,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVB-PM-EMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-970" y="2010"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="Apg-Ce-QXq">
+            <objects>
+                <collectionViewController id="LB4-Po-ag2" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EOF-80-Or5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vgM-qV-swK">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="u2N-HG-HAd">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hOY-MM-jyQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="LB4-Po-ag2" id="AyK-BF-5EG"/>
+                            <outlet property="delegate" destination="LB4-Po-ag2" id="xCJ-Rk-UKN"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xw-mS-hbA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118" y="2010"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="r9l-jS-1gJ">
@@ -240,7 +278,7 @@
         <!--Courses-->
         <scene sceneID="CCb-Xj-Ddf">
             <objects>
-                <viewController id="ye4-gZ-ler" sceneMemberID="viewController">
+                <viewController id="ye4-gZ-ler" customClass="CourseSearchViewController" customModule="DGScorekeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="huR-DR-p2f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,6 +304,9 @@
                         <viewLayoutGuide key="safeArea" id="WqY-4S-OZu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Courses" image="flag" catalog="system" id="eKL-03-gMR"/>
+                    <connections>
+                        <outlet property="courseSearchBar" destination="IhX-2X-OQU" id="idj-zg-1rX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qin-5F-C5B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
