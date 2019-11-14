@@ -11,13 +11,11 @@ import Foundation
 class Scorecard: Codable {
     
     var totalScore: String
-//    let scoreToPar: String
     let roundDate: Date
     var courseName: String
     
     init(totalScore: String, roundDate: Date = Date(), courseName: String) {
         self.totalScore = totalScore
-//        self.scoreToPar = scoreToPar
         self.roundDate = roundDate
         self.courseName = courseName
     }

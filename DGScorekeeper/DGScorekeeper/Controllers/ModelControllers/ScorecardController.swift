@@ -31,6 +31,7 @@ class ScorecardController {
         saveToPersistentStore()
     }
     
+    // Delete
     func deleteScorecard(scorecard: Scorecard) {
         guard let scorecardToDelete = scorecards.firstIndex(of: scorecard) else { return }
         scorecards.remove(at: scorecardToDelete)
@@ -44,7 +45,6 @@ class ScorecardController {
         return fileURL
     }
     
-    
     func saveToPersistentStore() {
         let jsonEncoder = JSONEncoder()
         
@@ -55,7 +55,6 @@ class ScorecardController {
             print("Error encoding Notes: \(error.localizedDescription) \n ----- \n \(error)")
         }
     }
-    
     
     func loadFromPersistentStore() {
         let jsonDecoder = JSONDecoder()
