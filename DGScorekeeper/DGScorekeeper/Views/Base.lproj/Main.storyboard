@@ -306,6 +306,7 @@
                     <tabBarItem key="tabBarItem" title="Courses" image="flag" catalog="system" id="eKL-03-gMR"/>
                     <connections>
                         <outlet property="courseSearchBar" destination="IhX-2X-OQU" id="idj-zg-1rX"/>
+                        <outlet property="mapView" destination="Zeh-Mq-eiM" id="Ai8-aM-yqG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qin-5F-C5B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
