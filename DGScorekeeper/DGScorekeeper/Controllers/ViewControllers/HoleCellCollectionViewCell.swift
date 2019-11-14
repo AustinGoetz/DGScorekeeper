@@ -10,12 +10,9 @@ import UIKit
 
 class HoleCellCollectionViewCell: UICollectionViewCell {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .purple
-    }
+    @IBOutlet weak var holeLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
+
 }

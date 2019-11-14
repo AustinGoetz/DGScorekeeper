@@ -153,7 +153,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vgM-qV-swK">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vgM-qV-swK">
                             <size key="itemSize" width="374" height="722"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -161,14 +161,14 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="holeCell" id="u2N-HG-HAd" customClass="HoleCellCollectionViewCell" customModule="DGScorekeeper" customModuleProvider="target">
-                                <rect key="frame" x="0.66666666666666663" y="0.0" width="374" height="722"/>
+                                <rect key="frame" x="0.0" y="45" width="374" height="722"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hOY-MM-jyQ">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="722"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hole 18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0B-GL-xhj">
-                                            <rect key="frame" x="99" y="106" width="174" height="60"/>
+                                            <rect key="frame" x="100" y="106" width="174" height="60"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -215,13 +215,17 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="r0B-GL-xhj" firstAttribute="centerX" secondItem="hOY-MM-jyQ" secondAttribute="centerX" id="Ert-57-oiW"/>
                                         <constraint firstItem="nTz-0m-SL5" firstAttribute="centerY" secondItem="hOY-MM-jyQ" secondAttribute="centerY" id="Sry-UE-2SR"/>
                                         <constraint firstItem="nTz-0m-SL5" firstAttribute="top" secondItem="r0B-GL-xhj" secondAttribute="bottom" constant="100" id="bc9-ho-NdD"/>
-                                        <constraint firstItem="r0B-GL-xhj" firstAttribute="leading" secondItem="hOY-MM-jyQ" secondAttribute="leading" constant="99" id="n3s-8S-L2z"/>
                                         <constraint firstItem="nTz-0m-SL5" firstAttribute="centerX" secondItem="hOY-MM-jyQ" secondAttribute="centerX" id="vbi-84-8af"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="374" height="722"/>
+                                <connections>
+                                    <outlet property="holeLabel" destination="r0B-GL-xhj" id="Gw1-D5-0pc"/>
+                                    <outlet property="scoreLabel" destination="9cQ-gh-aTA" id="BmX-ag-kpL"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

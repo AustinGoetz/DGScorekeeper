@@ -10,14 +10,13 @@ import UIKit
 
 private let reuseIdentifier = "holeCell"
 
-class ScorecardCollectionViewController: UICollectionViewController {
+class ScorecardCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        collectionView.backgroundColor = .lightGray
-        collectionView!.register(HoleCellCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.isPagingEnabled = true
+        
     }
     
     // MARK: UICollectionViewDataSource
@@ -26,15 +25,19 @@ class ScorecardCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? HoleCellCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.backgroundColor = indexPath.item % 2 == 0 ? .black : .white
+        cell.holeLabel.text = "Hole \(indexPath.row + 1)"
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     // MARK: UICollectionViewDelegate
