@@ -10,6 +10,12 @@ import UIKit
 
 class HoleCellCollectionViewCell: UICollectionViewCell {
     
+    var score = 3 {
+        didSet {
+            updateUI()
+        }
+    }
+    
     @IBOutlet weak var holeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var plusButtonOutlet: UIButton!
@@ -17,12 +23,18 @@ class HoleCellCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func plusButtonTapped(_ sender: Any) {
-//        guard let newScore = Int(scoreLabel.text) else {return}
+        score += 1
     }
     
     @IBAction func minusButtonTapped(_ sender: Any) {
-        
-        scoreLabel.text = "2"
+        score -= 1
     }
     
+    func updateUI() {
+        scoreLabel.text = "\(score)"
+    }
+    
+    override func prepareForReuse() {
+        score = 3
+    }
 }

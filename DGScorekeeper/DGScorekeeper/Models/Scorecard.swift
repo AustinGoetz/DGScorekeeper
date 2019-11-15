@@ -13,13 +13,19 @@ class Scorecard: Codable {
     var totalScore: String
     let roundDate: Date
     var courseName: String
+    var holes: [Int] = []
     
     init(totalScore: String, roundDate: Date = Date(), courseName: String) {
         self.totalScore = totalScore
         self.roundDate = roundDate
         self.courseName = courseName
+        
+        for _ in 1...18 {
+            holes.append(3)
+        }
     }
 }
+
 
 extension Scorecard: Equatable {
     static func == (lhs: Scorecard, rhs: Scorecard) -> Bool {

@@ -167,26 +167,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="722"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="pjg-IV-pui">
-                                            <rect key="frame" x="83.666666666666671" y="118.66666666666669" width="206.66666666666663" height="340"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="pjg-IV-pui">
+                                            <rect key="frame" x="56" y="118.66666666666669" width="262" height="340"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hole 18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0B-GL-xhj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="206.66666666666666" height="60"/>
+                                                    <rect key="frame" x="44" y="0.0" width="174" height="60"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="nTz-0m-SL5">
-                                                    <rect key="frame" x="0.0" y="150" width="206.66666666666666" height="190"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTz-0m-SL5">
+                                                    <rect key="frame" x="0.0" y="150" width="262" height="190"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cQ-gh-aTA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="61.666666666666664" height="190"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cQ-gh-aTA">
+                                                            <rect key="frame" x="0.0" y="0.0" width="192" height="190"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="100"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Fim-xJ-u5a">
-                                                            <rect key="frame" x="136.66666666666669" y="0.0" width="70" height="190"/>
+                                                            <rect key="frame" x="192" y="0.0" width="70" height="190"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcP-fW-pcp">
                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -227,6 +227,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="pjg-IV-pui" firstAttribute="centerY" secondItem="hOY-MM-jyQ" secondAttribute="centerY" multiplier="0.8" id="FhR-e1-zfT"/>
+                                        <constraint firstItem="nTz-0m-SL5" firstAttribute="width" secondItem="hOY-MM-jyQ" secondAttribute="width" multiplier="0.7" id="OnO-G9-cB8"/>
                                         <constraint firstItem="pjg-IV-pui" firstAttribute="centerX" secondItem="hOY-MM-jyQ" secondAttribute="centerX" id="jhZ-RG-z5g"/>
                                     </constraints>
                                 </collectionViewCellContentView>
@@ -247,7 +248,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xw-mS-hbA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-108" y="2010"/>
+            <point key="canvasLocation" x="-303" y="2010"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="r9l-jS-1gJ">
@@ -428,6 +429,6 @@
         <image name="house" catalog="system" width="64" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RCr-xX-cNo"/>
+        <segue reference="tER-o8-I2X"/>
     </inferredMetricsTieBreakers>
 </document>

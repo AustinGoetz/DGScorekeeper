@@ -12,22 +12,25 @@ private let reuseIdentifier = "holeCell"
 
 class ScorecardCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    // This will be my scorecard landing pad eventually
+    var scorecard: Scorecard? = Scorecard(totalScore: "", courseName: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.isPagingEnabled = true
-        
     }
     
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return scorecard?.holes.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? HoleCellCollectionViewCell else { return UICollectionViewCell() }
         
         cell.holeLabel.text = "Hole \(indexPath.row + 1)"
+        cell.score = scorecard?.holes[indexPath.row] ?? 3
+        cell.updateUI()
         
         return cell
     }
