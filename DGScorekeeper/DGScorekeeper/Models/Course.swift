@@ -16,5 +16,12 @@ struct TopLevelDict: Decodable {
 struct Courses: Decodable {
     
     let name: String
+    let coordinates: Coordinates
+}
+
+struct Coordinates: Decodable {
+    let latitude: Double
+    let longitude: Double
+    
 }
 

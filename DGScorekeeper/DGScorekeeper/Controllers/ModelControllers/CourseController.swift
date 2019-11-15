@@ -9,12 +9,13 @@
 import Foundation
 import MapKit
 
+
 class CourseController {
     
     static let apiKey = "Bearer tI_c4fA3AHN2fViDlwPBmdRY3dAz2HuzxhHe7hK7U9w6WxXZ7hWgpQDoVWFE9UwcVNSItKt5gmXtfdhuv76jbKZHYuv3qLJ-GIOd74XBE04SkuVuacFw-6G_oD7DXXYx"
     static let baseURL = "https://api.yelp.com/v3/businesses/search"
     
-    static func fetchYelpBusiness(searchTerm: String, completion: @escaping ([Courses]) -> Void) {
+    static func fetchYelpBusiness(searchTerm: String, location: String?, latitude: Double?, longitude: Double?, completion: @escaping ([Courses]) -> Void) {
         
         guard let url = URL(string: baseURL) else { completion([]); return }
         guard var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
@@ -25,9 +26,22 @@ class CourseController {
         }
         
         let searchQuery = URLQueryItem(name: "term", value: "discgolf")
-        let latitudeQuery = URLQueryItem(name: "latitude", value: "\(40.760780)") // PLACEHOLDER
-        let longitudeQuery = URLQueryItem(name: "longitude", value: "\(-111.891045)") // PLACEHOLDER
-        components.queryItems = [searchQuery, latitudeQuery, longitudeQuery]
+//        let latitudeQuery = URLQueryItem(name: "latitude", value: "\(40.760780)") // PLACEHOLDER
+//        let longitudeQuery = URLQueryItem(name: "longitude", value: "\(-111.891045)") // PLACEHOLDER
+        components.queryItems = [searchQuery]
+        
+        if let location = location {
+            let locationQuery = URLQueryItem(name: "location", value: location)
+            components.queryItems?.append(locationQuery)
+        }
+        
+        if let latitude = latitude, let longitude = longitude {
+            let latitudeQuery = URLQueryItem(name: "latitude", value: "\(latitude)")
+            let longitudeQuery = URLQueryItem(name: "longitude", value: "\(longitude)")
+            components.queryItems?.append(latitudeQuery)
+            components.queryItems?.append(longitudeQuery)
+            
+        }
         
         guard let finalURL = components.url else {
             print("The query items are causing issues")

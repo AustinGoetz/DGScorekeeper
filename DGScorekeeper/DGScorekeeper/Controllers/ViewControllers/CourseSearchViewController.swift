@@ -11,10 +11,8 @@ import MapKit
 
 class CourseSearchViewController: UIViewController, UISearchBarDelegate {
 
-    // MARK: - Outlets
-    @IBOutlet weak var courseSearchBar: UISearchBar!
-    @IBOutlet weak var mapView: MKMapView!
-    
+    let locationManager = CLLocationManager()
+    let regionInMeters: Double = 10000
     
     var courses: [Courses] = [] {
         didSet {
@@ -25,20 +23,95 @@ class CourseSearchViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
+    // MARK: - Outlets
+    @IBOutlet weak var courseSearchBar: UISearchBar!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         courseSearchBar.delegate = self
-//        mapView.delegate = self
+        checkLocationServices()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard let searchValue = searchBar.text, !searchText.isEmpty else { return }
-        
-        CourseController.fetchYelpBusiness(searchTerm: searchValue) { courses in
-            self.courses = courses
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func centerViewOnUsersLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            // Action to handle error
+        }
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            
+            mapView.showsUserLocation = true
+            centerViewOnUsersLocation()
+            locationManager.startUpdatingLocation()
+            
+        case .denied:
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            fatalError()
         }
     }
 }
+
+extension CourseSearchViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
+    }
+}
+    
+    
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        guard let searchValue = searchBar.text, !searchText.isEmpty else { return }
+//
+//        CourseController.fetchYelpBusiness(searchTerm: searchValue, location: nil, latitude: 45.5051, longitude: -122.6750) { courses in
+//            self.courses = courses
+//        }
+//    }
+//
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        searchBar.resignFirstResponder()
+//
+//        guard let searchText = searchBar.text, !searchText.isEmpty else { return }
+//        CourseController.fetchYelpBusiness(searchTerm: searchText, location: nil, latitude: locationManager.location?.coordinate.latitude, longitude: locationManager.location?.coordinate.longitude) { (results) in
+//            DispatchQueue.main.async {
+//                self.fetchBusinessAnnotation(businesses: results)
+//            }
+//        }
+//    }
 
 //extension CourseSearchViewController: MKMapViewDelegate {
 //
